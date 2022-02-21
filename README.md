@@ -1,6 +1,7 @@
 # SystemInitial
-This is a batch of scripts for the initial preparation of new linux system.  
-Which includes:  
-  A preset template for .bashrc.  
-  A shell script for basic software installation automatically.  
-  A shell script for related database download automatically.  
+　　This includes a batch of `Scripts` for the work initiation, like environment preparation, database download and software installation.  
+
+　　**Which includes**  
+　　　1. **`.bashrc`** for linux environment initial.  
+　　　2. **`Install.sh`** for basic software installation automatically.  
+　　　3. **`DB.sh`** for related database download automatically.  
