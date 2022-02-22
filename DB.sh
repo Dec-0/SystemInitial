@@ -1,9 +1,11 @@
 # This script for ordinary database files
 # Executable files and related
-Perl="/biobiggen/data/headQuarter/user/xiezhangdong/Softs/perl-5.26.3/bin/perl"
-Dir4Annovar="/biobiggen/data/headQuarter/user/xiezhangdong/Scripts/Annotation/Annovar"
-Ascp="/biobiggen/data/headQuarter/user/xiezhangdong/Softs/aspera-cli-3.9.6/cli/bin/ascp"
-Key410KGP="/biobiggen/data/headQuarter/user/xiezhangdong/Softs/aspera-cli-3.9.6/cli/etc/asperaweb_id_dsa.openssh"
+Dir4Script="./Scripts"
+Dir4Soft="./Softs"
+Perl="${Dir4Soft}/perl-5.26.3/bin/perl"
+Dir4Annovar="${Dir4Script}/Annotation/Annovar"
+Ascp="${Dir4Soft}/aspera-cli-3.9.6/cli/bin/ascp"
+Key410KGP="${Dir4Soft}/aspera-cli-3.9.6/cli/etc/asperaweb_id_dsa.openssh"
 # Other
 Dir4Work=$(pwd)
 Flag4RefHg38=false
