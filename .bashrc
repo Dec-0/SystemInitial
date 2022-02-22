@@ -10,7 +10,7 @@ fi
 
 # User specific aliases and functions
 
-WorkDir="/biobiggen/data/headQuarter/user/xiezhangdong"
+WorkDir="./"
 SoftDir="${WorkDir}/Softs"
 DBDir="${WorkDir}/DB"
 ScriptDir="${WorkDir}/Script"
