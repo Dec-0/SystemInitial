@@ -16,6 +16,8 @@ Flag4Annotation=false
 Flag410KGP=false
 Flag4dbsnp=false
 Flag4gnomAD=false
+# NA12878
+Flag4NA12878=false
 
 # Reference ucsc.hg38.fasta
 if ${Flag4RefHg38} ; then
@@ -172,4 +174,40 @@ fi
 
 # Ensembl
 
-# NA12878
+# TruthSet for NA12878
+# GiAB
+if ${Flag4NA12878} && [ ! -s ${Dir4Work}/TruthSet/NA12878/GiAB/GRCh38/HG001_GRCh38_1_22_v4.2.1_benchmark.bed ] ; then
+	[ ! -d ${Dir4Work}/TruthSet/NA12878/GiAB/GRCh38 ] && mkdir -p ${Dir4Work}/TruthSet/NA12878/GiAB/GRCh38
+	cd ${Dir4Work}/TruthSet/NA12878/GiAB/GRCh38
+	wget "ftp://ftp-trace.ncbi.nlm.nih.gov/giab/ftp/release/NA12878_HG001/NISTv4.2.1/GRCh38/HG001_GRCh38_1_22_v4.2.1_benchmark.bed" -O HG001_GRCh38_1_22_v4.2.1_benchmark.bed
+	wget "ftp://ftp-trace.ncbi.nlm.nih.gov/giab/ftp/release/NA12878_HG001/NISTv4.2.1/GRCh38/HG001_GRCh38_1_22_v4.2.1_benchmark.vcf.gz" -O HG001_GRCh38_1_22_v4.2.1_benchmark.vcf.gz
+	wget "ftp://ftp-trace.ncbi.nlm.nih.gov/giab/ftp/release/NA12878_HG001/NISTv4.2.1/GRCh38/HG001_GRCh38_1_22_v4.2.1_benchmark.vcf.gz.tbi" -O HG001_GRCh38_1_22_v4.2.1_benchmark.vcf.gz.tbi
+fi
+# Illumina Platinum Genomes
+if ${Flag4NA12878} && [ ! -s ${Dir4Work}/TruthSet/NA12878/PlatinumGenomes/GRCh38/ConfidentRegions.bed.gz ] ; then
+	[ ! -d ${Dir4Work}/TruthSet/NA12878/PlatinumGenomes/GRCh38 ] && mkdir -p ${Dir4Work}/TruthSet/NA12878/PlatinumGenomes/GRCh38
+	cd ${Dir4Work}/TruthSet/NA12878/PlatinumGenomes/GRCh38
+	wget ftp://platgene_ro:''@ussd-ftp.illumina.com/2017-1.0/hg38/small_variants/ConfidentRegions.bed.gz -O ConfidentRegions.bed.gz
+	wget ftp://platgene_ro:''@ussd-ftp.illumina.com/2017-1.0/hg38/small_variants/ConfidentRegions.bed.gz.tbi -O ConfidentRegions.bed.gz.tbi
+	wget ftp://platgene_ro:''@ussd-ftp.illumina.com/2017-1.0/hg38/small_variants/NA12878/NA12878.vcf.gz -O NA12878.vcf.gz
+	wget ftp://platgene_ro:''@ussd-ftp.illumina.com/2017-1.0/hg38/small_variants/NA12878/NA12878.vcf.gz.tbi -O NA12878.vcf.gz.tbi
+	wget ftp://platgene_ro:''@ussd-ftp.illumina.com/2017-1.0/hg38/hybrid/README.md -O README.md
+fi
+# Fastq for NA12878 (GiAB)
+if ${Flag4NA12878} && [ ! -s ${Dir4Work}/Fastq/NA12878/GiAB/HiSeqExome/NIST7035_TAAGGCGA_L001_R1_001.fastq.gz ] ; then
+	[ ! -d ${Dir4Work}/Fastq/NA12878/GiAB/HiSeqExome ] && mkdir -p ${Dir4Work}/Fastq/NA12878/GiAB/HiSeqExome
+	cd ${Dir4Work}/Fastq/NA12878/GiAB/HiSeqExome
+	wget "ftp://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/data/NA12878/Garvan_NA12878_HG001_HiSeq_Exome/NIST7035_TAAGGCGA_L001_R1_001.fastq.gz" -O NIST7035_TAAGGCGA_L001_R1_001.fastq.gz
+	wget "ftp://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/data/NA12878/Garvan_NA12878_HG001_HiSeq_Exome/NIST7035_TAAGGCGA_L001_R2_001.fastq.gz" -O NIST7035_TAAGGCGA_L001_R2_001.fastq.gz
+	wget "ftp://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/data/NA12878/Garvan_NA12878_HG001_HiSeq_Exome/NIST7035_TAAGGCGA_L002_R1_001.fastq.gz" -O NIST7035_TAAGGCGA_L002_R1_001.fastq.gz
+	wget "ftp://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/data/NA12878/Garvan_NA12878_HG001_HiSeq_Exome/NIST7035_TAAGGCGA_L002_R2_001.fastq.gz" -O NIST7035_TAAGGCGA_L002_R2_001.fastq.gz
+fi
+# Fastq for NA12878 (Platinum)
+:<<!
+if ${Flag4NA12878} && [ ! -s ${Dir4Work}/Fastq/NA12878/PlatinumGenomes/HiSeqWGS/ERR194147_1.fastq.gz ] ; then
+	[ ! -d ${Dir4Work}/Fastq/NA12878/PlatinumGenomes/HiSeqWGS ] && mkdir -p ${Dir4Work}/Fastq/NA12878/PlatinumGenomes/HiSeqWGS
+	cd ${Dir4Work}/Fastq/NA12878/PlatinumGenomes/HiSeqWGS
+	wget "ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR194/ERR194147/ERR194147_1.fastq.gz" -O ERR194147_1.fastq.gz
+	wget "ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR194/ERR194147/ERR194147_2.fastq.gz" -O ERR194147_2.fastq.gz
+fi
+!
