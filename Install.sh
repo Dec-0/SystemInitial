@@ -97,7 +97,8 @@ if ${Flag4Perl} && [ ! -s ${Dir4Work}/perl-5.26.3/bin/perl ] ; then
 		sleep 10
 	done
 	tar -jxvf perl-5.26.3.tar.bz2
-	cd perl-5.26.3 && ./Configure -des -Dprefix=${Dir4Work}/perl-5.26.3
+	# Perl doesnot suppport multi threads by default after 5.8, compile with '-Dusethreads' if need;
+	cd perl-5.26.3 && ./Configure -des -Dprefix=${Dir4Work}/perl-5.26.3 -Dusethreads
 	make && make install
 	rm ${Dir4Work}/SourcePackages/perl-5.26.3.tar.bz2 && rm -rf ${Dir4Work}/SourcePackages/perl-5.26.3
 fi
