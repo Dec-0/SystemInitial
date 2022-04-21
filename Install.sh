@@ -86,6 +86,7 @@ if [ -s ${Dir4Work}/gcc-9.3.0/bin/gcc ] ; then
 fi
 
 ############ perl download may fail need retry
+# Need LD_LIBRARY_PATH: mpfr-4.1.0/lib/libmpfr.so.6;
 if ${Flag4Perl} && [ ! -s ${Dir4Work}/perl-5.26.3/bin/perl ] ; then
 	[[ ! -d ${Dir4Work}/SourcePackages ]] && mkdir -p ${Dir4Work}/SourcePackages
 	cd ${Dir4Work}/SourcePackages
