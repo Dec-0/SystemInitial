@@ -255,8 +255,8 @@ if ${Flag4Bedtools} && [ ! -s ${Dir4Work}/bedtools2-2.26.0/bin/bedtools ] ; then
 	wget 'https://codeload.github.com/arq5x/bedtools2/tar.gz/refs/tags/v2.26.0' -O bedtools-2.26.0.tar.gz
 	tar xzvf bedtools-2.26.0.tar.gz
 	cd bedtools2-2.26.0 && make
-	mv ${Dir4Work}/SourcePackages/bedtools2-2.26.0 ${Dir4Work}
-	rm ${Dir4Work}/SourcePackages/bedtools-2.26.0.tar.gz
+	mv ${Dir4Work}/SourcePackages/bedtools2-2.26.0 ${Dir4Work}/bedtools-2.26.0
+	rm ${Dir4Work}/SourcePackages/bedtools-2.26.0.tar.gzi
 fi
 
 ############ aspera-cli-3.9.6
