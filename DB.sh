@@ -1,23 +1,23 @@
 # This script for ordinary database files
 # Executable files and related
-Dir4Script="./Scripts"
-Dir4Soft="./Softs"
+Dir4Work=$(pwd)
+Dir4Script="${Dir4Work}/../Scripts"
+Dir4Soft="${Dir4Work}/../Softs"
 Perl="${Dir4Soft}/perl-5.26.3/bin/perl"
 Dir4Annovar="${Dir4Script}/Annotation/Annovar"
 Ascp="${Dir4Soft}/aspera-cli-3.9.6/cli/bin/ascp"
 Key410KGP="${Dir4Soft}/aspera-cli-3.9.6/cli/etc/asperaweb_id_dsa.openssh"
 # Other
-Dir4Work=$(pwd)
-Flag4RefHg38=false
-Flag4LiftOverChain=false
-Flag4NMAndAA=false
-Flag4Annotation=false
+Flag4RefHg38=true
+Flag4LiftOverChain=true
+Flag4NMAndAA=true
+Flag4Annotation=true
 # MAF
-Flag410KGP=false
-Flag4dbsnp=false
-Flag4gnomAD=false
+Flag410KGP=true
+Flag4dbsnp=true
+Flag4gnomAD=true
 # NA12878
-Flag4NA12878=false
+Flag4NA12878=true
 
 # Reference ucsc.hg38.fasta
 if ${Flag4RefHg38} ; then
